@@ -37,13 +37,13 @@ img {
   }
   .prof {
     position: relative;
-    width: 50%;
+    width: 30%;
   }
   
   .profile {
     opacity: 1;
     display: block;
-    width: 100%;
+    width:auto;
     height: auto;
     transition: .5s ease;
     backface-visibility: hidden;
@@ -54,7 +54,7 @@ img {
     opacity: 0;
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 30%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%)
   }
@@ -68,8 +68,9 @@ img {
   }
   
   .text {
-    background-color: #4CAF50;
+    background-color: #96B851;
     color: white;
     font-size: 16px;
     padding: 16px 32px;
   }
+  
