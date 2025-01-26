@@ -2,6 +2,18 @@ html{
     margin: 0 auto;
 }
 
+
+.kanit-thin {
+    font-family: "Kanit", serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  .rubik-glitch-regular {
+    font-family: "Rubik Glitch", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -41,8 +53,22 @@ body {
   color: var(--text-color);
   background-color: #FFFFFF;
 }
-/*image style*/
-img {
+.toggle-btn {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  .toggle-btn:hover {
+    background-color: #45a049;
+  }
+  
+/*image me style*/
+img{
     border-radius: 50%;
   }
   .prof {
@@ -89,4 +115,39 @@ img {
     --opacity: 1.5;
   
     --text-color: #f0f0f0;
+  }
+  /*Accordion*/
+  
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+  }
+  
+  .active, .accordion:hover {
+    background-color: #ccc;
+  }
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+  .accordion:after {
+    content: '\02795';
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .active:after {
+    content: "\2796";
   }
