@@ -1,7 +1,8 @@
 html{
     margin: 0 auto;
+    background-color: #b56f3b;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='42' height='58' viewBox='0 0 42 58'%3E%3Cg fill='%23ffffff' fill-opacity='0.41'%3E%3Cpath fill-rule='evenodd' d='M12 18h12v18h6v4H18V22h-6v-4zm-6-2v-4H0V0h36v6h6v36h-6v4h6v12H6v-6H0V16h6zM34 2H2v8h24v24h8V2zM6 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm8 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm8 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm8 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM2 50h32v-8H10V18H2v32zm28-6a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0-8a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0-8a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0-8a2 2 0 1 0 0 4 2 2 0 0 0 0-4z'/%3E%3C/g%3E%3C/svg%3E");
 }
-
 
 .kanit-thin {
     font-family: "Kanit", serif;
@@ -43,15 +44,29 @@ footer, header, hgroup, menu, nav, section {
   --background-color: white;
   --text-color: black;
 }
+h1{
+    font-family: "Rubik Glitch", serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    font-size: 100px;
+}
+h2{
+    font-family: "Kanit", serif;
+    font-weight: bold;
+     margin: 4px;
+     padding-top: 40px;
+    text-transform: uppercase;;
 
+}
 body {
-	line-height: 1;
-  max-width: 900px;
+ line-height: 1;
+  max-width: 1000px;
   margin: 0 auto;
   align-items: center;
   background-color: var(--background-color);
   color: var(--text-color);
-  background-color: #FFFFFF;
+  background-color: #B56F3B;
 }
 .toggle-btn {
     padding: 10px 20px;
@@ -66,9 +81,61 @@ body {
   .toggle-btn:hover {
     background-color: #45a049;
   }
-  
+  .sr-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/*NAV*/
+nav{
+	grid-column: 1 / -1;
+	position: relative;
+	bottom: 60%;
+}
+nav li {
+	
+margin-left: 5px;
+background-color: #FFFFFF;
+padding: 10px 8px;
+  }
+nav a{
+text-decoration:none;
+text-align: center;
+align-items: center;
+padding: 2rem;
+margin: 1rem 0;
+background-color: var(--white);
+color:#000000; 
+font-size: 1rem;
+font-weight: bold;
+border-radius: 0.25rem;
+text-transform: uppercase;
+justify-content: center;
+  }
+nav ul{
+list-style:none;
+display: flex;
+justify-content: center;
+padding: 10px 8px;
+text-align: center;
+}  
+
+
+nav li:hover{
+background-color:#DBDBDB;
+padding: 10px 8px;
+}
+nav a:hover {
+    color: #fff;
+    background-color: #4CAF50;
+}
+
 /*image me style*/
-img{
+#prof{
     border-radius: 50%;
   }
   .prof {
@@ -103,7 +170,7 @@ img{
     opacity: 1;
   }
   
-  .text {
+  .hitext {
     background-color: #96B851;
     color: white;
     font-size: 16px;
@@ -111,11 +178,14 @@ img{
   }
   /* Dark mode styles */
   body.dark-mode {
-    background-color:#000000;
+    background-color:#00007E;
     --opacity: 1.5;
-  
     --text-color: #f0f0f0;
   }
+ html.dark-mode{ 
+    background-color: #00007e;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='42' height='58' viewBox='0 0 42 58'%3E%3Cg fill='%23000000' fill-opacity='0.41'%3E%3Cpath fill-rule='evenodd' d='M12 18h12v18h6v4H18V22h-6v-4zm-6-2v-4H0V0h36v6h6v36h-6v4h6v12H6v-6H0V16h6zM34 2H2v8h24v24h8V2zM6 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm8 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm8 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm8 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM2 50h32v-8H10V18H2v32zm28-6a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0-8a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0-8a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0-8a2 2 0 1 0 0 4 2 2 0 0 0 0-4z'/%3E%3C/g%3E%3C/svg%3E");
+}
   /*Accordion*/
   
 .accordion {
@@ -123,7 +193,7 @@ img{
     color: #444;
     cursor: pointer;
     padding: 18px;
-    width: 100%;
+    width: 90%;
     text-align: left;
     border: none;
     outline: none;
@@ -139,7 +209,12 @@ img{
     display: none;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+    width: 90%;
   }
+
+.panel.show {
+    display: block;
+}
   .accordion:after {
     content: '\02795';
     font-size: 13px;
@@ -150,4 +225,104 @@ img{
   
   .active:after {
     content: "\2796";
+  }
+  /*Abilitis*/
+
+
+
+  /*currency*/
+
+
+/*Location*/
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 900px;
+    position: relative;
+    margin: auto;
+    align-items: center;
+  }
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+    width: 100%;
+    height: auto;
+    
+}
+#placs{
+    position: relative;
+    left: 25%;
+}
+  
+  /* Next/previous buttons */
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    background-color: #96B851;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Number text */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 14px;
+    padding: 8px 12px;
+    position: relative;
+    top: 1;
+    left: 25%;
+    width: auto;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active, .dot:hover {
+    background-color: #717171;
+  }
+  
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
   }
