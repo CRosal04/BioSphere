@@ -171,7 +171,7 @@ nav a:hover {
   }
   
   .hitext {
-    background-color: #96B851;
+    background-color: #4CAF50;
     color: white;
     font-size: 16px;
     padding: 16px 32px;
@@ -232,10 +232,38 @@ nav a:hover {
 
   /*currency*/
 
-
+  .converter {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  input, select, button {
+    padding: 10px;
+    margin: 5px;
+    font-size: 16px;
+  }
+  
+  button {
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #4CAF50;
+  }
+  
+  #result {
+    font-size: 18px;
+    margin-top: 20px;
+    color: #333;
+  }
 /*Location*/
-
-/* Slideshow container */
 .slideshow-container {
     max-width: 900px;
     position: relative;

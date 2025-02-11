@@ -46,6 +46,47 @@ for (i = 0; i < acc.length; i++) {
 
 //Currency
 
+document.getElementById('convertButton').addEventListener('click', convertCurrency);
+
+function convertCurrency() {
+  const amount = document.getElementById('amount').value;
+  const fromCurrency = document.getElementById('fromCurrency').value;
+  const toCurrency = document.getElementById('toCurrency').value;
+  const result = document.getElementById('result');
+
+  if (amount === "" || isNaN(amount)) {
+    result.textContent = "Please enter a valid amount.";
+    return;
+  }
+
+  const url = `https://v6.exchangerate-api.com/v6/60ccc70b1e0b7a42c1baefcc/latest/${fromCurrency}`;
+
+  // Fetch the conversion rates in JSON format
+  fetch(url)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then(data => {
+  
+      const rate = data.rates[toCurrency];
+      if (rate) {
+        const convertedAmount = (amount * rate).toFixed(2);
+        result.textContent = `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`;
+      } else {
+        result.textContent = "Conversion rate not available.";
+      }
+    })
+    .catch(error => {
+      result.textContent = "Error fetching conversion rate.";
+      console.error("Error:", error);
+    });
+}
+
+
+
 // Location
 let slideIndex = 1;
 showSlides(slideIndex);
