@@ -45,23 +45,24 @@ for (i = 0; i < acc.length; i++) {
 //abilities
 
 //Currency
-
 document.getElementById('convertButton').addEventListener('click', convertCurrency);
 
 function convertCurrency() {
-  const amount = document.getElementById('amount').value;
+  const amountInput = document.getElementById('amount').value;
+  const amount = parseFloat(amountInput);
   const fromCurrency = document.getElementById('fromCurrency').value;
   const toCurrency = document.getElementById('toCurrency').value;
   const result = document.getElementById('result');
 
-  if (amount === "" || isNaN(amount)) {
+  // Validate the amount input
+  if (isNaN(amount) || amount <= 0) {
     result.textContent = "Please enter a valid amount.";
     return;
   }
 
-  const url = `https://v6.exchangerate-api.com/v6/60ccc70b1e0b7a42c1baefcc/latest/${fromCurrency}`;
+  // API endpoint using USD as the base currency
+  const url = `https://v6.exchangerate-api.com/v6/a087b8b72226c312f4d99b69/latest/USD`;
 
-  // Fetch the conversion rates in JSON format
   fetch(url)
     .then(response => {
       if (!response.ok) {
@@ -70,10 +71,15 @@ function convertCurrency() {
       return response.json();
     })
     .then(data => {
-  
-      const rate = data.rates[toCurrency];
-      if (rate) {
-        const convertedAmount = (amount * rate).toFixed(2);
+      const rates = data.rates;
+      const rateFrom = rates[fromCurrency];
+      const rateTo = rates[toCurrency];
+
+      if (rateFrom && rateTo) {
+        // Convert the entered amount from the selected currency to USD,
+        // then convert from USD to the target currency.
+        const amountInUSD = amount / rateFrom;
+        const convertedAmount = (amountInUSD * rateTo).toFixed(2);
         result.textContent = `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`;
       } else {
         result.textContent = "Conversion rate not available.";
@@ -84,7 +90,6 @@ function convertCurrency() {
       console.error("Error:", error);
     });
 }
-
 
 
 // Location
