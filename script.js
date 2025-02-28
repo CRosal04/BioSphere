@@ -40,9 +40,40 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
-
+// 
 
 //abilities
+document.addEventListener("DOMContentLoaded", () => {
+  // Check if web storage already has data; if not, initialize it
+  if (!localStorage.getItem("data")) {
+    const data = {
+      projects: ["Portfolio Website", "E-commerce Store", "Currency Converter", "To-Do App"],
+      abilities: ["Problem-Solving", "Creative Thinking", "Project Management", "Teamwork"],
+      skills: ["JavaScript", "HTML & CSS", "React", "Node.js"]
+    };
+    localStorage.setItem("data", JSON.stringify(data));
+  }
+  const storedData = JSON.parse(localStorage.getItem("data"));
+
+  // Function to get a random item from an array
+  function getRandomItem(array) {
+    return array[Math.floor(Math.random() * array.length)];
+  }
+
+  // Display random project, ability, and skill
+  document.getElementById("randomProject").textContent = getRandomItem(storedData.projects);
+  document.getElementById("randomAbility").textContent = getRandomItem(storedData.abilities);
+  document.getElementById("randomSkill").textContent = getRandomItem(storedData.skills);
+
+  // Button to regenerate random items
+  document.getElementById("randomizeButton").addEventListener("click", () => {
+    document.getElementById("randomProject").textContent = getRandomItem(storedData.projects);
+    document.getElementById("randomAbility").textContent = getRandomItem(storedData.abilities);
+    document.getElementById("randomSkill").textContent = getRandomItem(storedData.skills);
+  });
+});
+
+//Currency exchange
 
 document.getElementById('convertButton').addEventListener('click', convertCurrency);
 
