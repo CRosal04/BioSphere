@@ -76,8 +76,6 @@ function convertCurrency() {
       const rateTo = rates[toCurrency];
 
       if (rateFrom && rateTo) {
-        // Convert the entered amount from the selected currency to USD,
-        // then convert from USD to the target currency.
         const amountInUSD = amount / rateFrom;
         const convertedAmount = (amountInUSD * rateTo).toFixed(2);
         result.textContent = `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`;
