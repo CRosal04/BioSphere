@@ -44,7 +44,6 @@ for (i = 0; i < acc.length; i++) {
 
 //abilities
 
-//Currency
 document.getElementById('convertButton').addEventListener('click', convertCurrency);
 
 function convertCurrency() {
@@ -71,11 +70,14 @@ function convertCurrency() {
       return response.json();
     })
     .then(data => {
-      const rates = data.rates;
+      // Note: The API returns "conversion_rates", not "rates"
+      const rates = data.conversion_rates;
       const rateFrom = rates[fromCurrency];
       const rateTo = rates[toCurrency];
 
       if (rateFrom && rateTo) {
+        // Convert the entered amount from the selected currency to USD,
+        // then convert from USD to the target currency.
         const amountInUSD = amount / rateFrom;
         const convertedAmount = (amountInUSD * rateTo).toFixed(2);
         result.textContent = `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`;
@@ -88,7 +90,6 @@ function convertCurrency() {
       console.error("Error:", error);
     });
 }
-
 
 // Location
 let slideIndex = 1;
