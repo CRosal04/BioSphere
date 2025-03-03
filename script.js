@@ -1,28 +1,38 @@
 //Dark mode
 
 const toggleBtn = document.getElementById('toggle-btn');
-const body = document.body;
+const htmlEl = document.documentElement; 
+const bodyEl = document.body; 
 const currentMode = localStorage.getItem('theme');
-if (currentMode === 'dark') {
-    body.classList.add('dark-mode');
-    toggleBtn.textContent = 'Switch to Light Mode';
+
+const moonIconPath = 'images/moon-svgrepo-com.svg';
+const sunIconPath = 'images/sun-svgrepo-com.svg'; 
+// Function to update the toggle button icon based on dark mode state
+function setIcon() {
+  if (htmlEl.classList.contains('dark-mode')) {
+    toggleBtn.innerHTML = `<img src="${sunIconPath}" alt="Switch to Light Mode" width="40" height="40" class="sun-icon" />`;
+  } else {
+    toggleBtn.innerHTML = `<img src="${moonIconPath}" alt="Switch to Dark Mode" width="40" height="40" />`;
+  }
 }
 
+if (currentMode === 'dark') {
+  htmlEl.classList.add('dark-mode');
+  bodyEl.classList.add('dark-mode');
+}
+setIcon();
 
 toggleBtn.addEventListener('click', function () {
-    body.classList.toggle('dark-mode');
-
-    // Update the button text
-    if (body.classList.contains('dark-mode')) {
-        toggleBtn.textContent = 'Switch to Light Mode';
-        
-        localStorage.setItem('theme', 'dark');
-    } else {
-        toggleBtn.textContent = 'Switch to Dark Mode';
-        localStorage.setItem('theme', 'light');
-    }
+  htmlEl.classList.toggle('dark-mode');
+  bodyEl.classList.toggle('dark-mode');
+  
+  if (htmlEl.classList.contains('dark-mode')) {
+    localStorage.setItem('theme', 'dark');
+  } else {
+    localStorage.setItem('theme', 'light');
+  }
+  setIcon();
 });
-
 //Accordion
 
 var acc = document.getElementsByClassName("accordion");
@@ -39,7 +49,7 @@ for (i = 0; i < acc.length; i++) {
         panel.classList.add('show');
     }
   });
-}
+
 // 
 
 //abilities
@@ -150,4 +160,5 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
+}
 }
