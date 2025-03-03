@@ -56,7 +56,8 @@ h2{
     font-weight: bold;
      margin: 4px;
      padding-top: 40px;
-    text-transform: uppercase;;
+    text-transform: uppercase;
+    font-size: 2.5rem;
 
 }
 body {
@@ -150,12 +151,31 @@ nav a:hover {
 /*image me style*/
 #prof{
     border-radius: 50%;
+    margin: 5rem;
   }
   .prof {
     position: relative;
     width: 50%;
   }
-  
+  .name-who {
+    position: absolute;
+    right: -450px;
+    top: 40%;
+    transform: translateY(-50%);
+    text-align: right;
+  }
+  .name-who h2{
+    font-size: 2rem;
+    text-align: center;
+    background: linear-gradient(to bottom, #96B851 0, #FFFFFF 100%);
+    padding: 3rem 2rem;
+    align-items: center;
+  }
+  .name-who h3{
+    font-size: 2rem;
+    text-align: center;
+    margin: 1.5rem;
+  }
   .profile {
     opacity: 1;
     display: block;
@@ -169,7 +189,7 @@ nav a:hover {
     transition: .5s ease;
     opacity: 0;
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%)
@@ -184,11 +204,22 @@ nav a:hover {
   }
   
   .hitext {
-    background-color: #4CAF50;
+    background-color: #96B851;
     color: white;
     font-size: 16px;
     padding: 16px 32px;
   }
+  .social-links{
+    text-decoration:none;
+    text-align: center;
+    align-items: center;
+    margin: 2rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 0.25rem;
+    text-transform: uppercase;
+    justify-content: center;
+      }
   
   /*Accordion*/
   
