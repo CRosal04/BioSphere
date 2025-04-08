@@ -108,6 +108,7 @@ transition: filter 0.3s;
 filter: brightness(0) invert(1);
 }
 
+
 /*NAV*/
 nav{
 	grid-column: 1 / -1;
@@ -248,6 +249,15 @@ nav a:hover {
     outline: none;
     transition: 0.4s;
   }
+  .accordion-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2em auto;
+    width: 100%;
+  }
+  
   
   .active, .accordion:hover {
     background-color: #ccc;
@@ -263,6 +273,10 @@ nav a:hover {
 
 .panel.show {
     display: block;
+}
+.panel p{
+  margin: .5em;
+  padding: 10px;
 }
   .accordion:after {
     content: '\02795';
@@ -285,7 +299,7 @@ nav a:hover {
     justify-content: center; 
     align-items: center;
   }
-  
+  /*social links*/
   .social-links li {
     display: inline-block;
   }
@@ -298,6 +312,14 @@ nav a:hover {
   
   .social-links img:hover {
     transform: scale(1.2); 
+  }
+  
+  .logo {
+    transition: filter 0.3s ease;
+  }
+  
+  html.dark-mode .logo {
+    filter: brightness(0) invert(1);
   }
   
   /*Abilitis*/
