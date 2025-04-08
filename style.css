@@ -164,13 +164,27 @@ nav a:hover {
     transform: translateY(-50%);
     text-align: right;
   }
-  .name-who h2{
+  .name-who h2.neon {
     font-size: 2rem;
     text-align: center;
-    background: linear-gradient(to bottom, #96B851 0, #FFFFFF 100%);
     padding: 3rem 2rem;
-    align-items: center;
+    color: #96B851;
+    text-shadow: 0 0 5px #96B851, 0 0 10px #96B851, 0 0 20px #96B851;
+    animation: neonFlicker 2.5s infinite;
   }
+  
+  /* Neon flicker keyframes */
+  @keyframes neonFlicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      opacity: 1;
+      text-shadow: 0 0 5px #96B851, 0 0 10px #96B851, 0 0 20px #96B851;
+    }
+    20%, 22%, 24%, 55% {
+      opacity: 0.4;
+      text-shadow: none;
+    }
+  }
+  
   .name-who h3{
     font-size: 2rem;
     text-align: center;
@@ -261,6 +275,31 @@ nav a:hover {
   .active:after {
     content: "\2796";
   }
+
+  .social-links {
+    list-style: none;
+    padding: 2em;
+    margin: 1.5em;
+    display: flex;
+    gap: 20px; 
+    justify-content: center; 
+    align-items: center;
+  }
+  
+  .social-links li {
+    display: inline-block;
+  }
+  
+  .social-links img {
+    width: 40px;   
+    height: 40px;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-links img:hover {
+    transform: scale(1.2); 
+  }
+  
   /*Abilitis*/
 
   #randomOutput p {
