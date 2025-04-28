@@ -342,8 +342,8 @@ nav a:hover {
 
   /*currency*/
   #cUrrency p {
-    padding: 10px;
-    margin: 20px 0;
+    padding: 5px;
+    margin: 10px 30px;
   }
   .converter {
     background-color: #fff;
@@ -351,7 +351,7 @@ nav a:hover {
     border-radius: 10px;
     display: inline-block;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 40px;
+    margin: 40px 20px;
   }
   
   input, select, button {
@@ -467,4 +467,8 @@ nav a:hover {
   @keyframes fade {
     from {opacity: .4}
     to {opacity: 1}
+  }
+  footer {
+    text-align: center;
+    padding: 1.5em;
   }
