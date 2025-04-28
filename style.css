@@ -119,7 +119,7 @@ nav li {
 	
 margin-left: 8px;
 background-color: #FFFFFF;
-padding: 1.5rem 1.2rem;
+padding: 1.5rem;
   }
 nav a{
 text-decoration:none;
@@ -152,7 +152,7 @@ nav a:hover {
 /*image me style*/
 #prof{
     border-radius: 50%;
-    margin: 5rem;
+    margin: 5rem 5rem;
   }
   .prof {
     position: relative;
@@ -263,7 +263,7 @@ nav a:hover {
     background-color: #ccc;
   }
   .panel {
-    padding: 0 18px;
+    padding: 25px 18px;
     background-color: white;
     display: none;
     overflow: hidden;
@@ -341,7 +341,10 @@ nav a:hover {
   }
 
   /*currency*/
-  
+  #cUrrency p {
+    padding: 10px;
+    margin: 20px 0;
+  }
   .converter {
     background-color: #fff;
     padding: 20px;
