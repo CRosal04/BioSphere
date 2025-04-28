@@ -242,7 +242,7 @@ nav a:hover {
     background-color: #eee;
     color: #444;
     cursor: pointer;
-    padding: 18px;
+    padding: 15px;
     width: 90%;
     text-align: left;
     border: none;
@@ -254,7 +254,7 @@ nav a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 2em auto;
+    margin: 1.5em auto;
     width: 100%;
   }
   
@@ -341,13 +341,14 @@ nav a:hover {
   }
 
   /*currency*/
-
+  
   .converter {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     display: inline-block;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 40px;
   }
   
   input, select, button {
